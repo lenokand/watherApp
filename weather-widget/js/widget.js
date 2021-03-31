@@ -12,6 +12,8 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${PLACE}&appid=${API_KE
 
 function renderWidget(data) {
     const widgetContainer = document.querySelector('.weatherWidget')
+    const now = new Date()
+    const monthArray = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     let content = `
             <div class="weatherWidget-header">
                 <div class="weatherWidget-header__place">
