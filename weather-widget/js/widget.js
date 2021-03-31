@@ -46,7 +46,7 @@ function renderWidget(data) {
                     <span>${data.wind.speed}m/s</span>
                 </div>
                 <div class="weatherWidget-footer__wind">
-                    <img src="./weather-widget/img/teardrop.svg" alt="humidity">
+                    <img src="weather-widget/img/teardrop.svg" alt="humidity">
                     <span>${Math.round(data.main.humidity)}%</span>
                 </div>
                 <div class="weatherWidget-footer__wind">
