@@ -21,7 +21,7 @@ function renderWidget(data) {
                     ${data.name}
                 </div>
                 <button class="weatherWidget-header__reload">
-                    <img src="./weather-widget/img/_refresh.svg" alt="reload weather">
+                    <img src="weather-widget/img/_refresh.svg" alt="reload weather">
                 </button>
             </div>
             <div class="weatherWidget-body">
@@ -42,7 +42,7 @@ function renderWidget(data) {
             </div>
             <div class="weatherWidget-footer">
                 <div class="weatherWidget-footer__wind">
-                    <img src="./weather-widget/img/_arrow.svg" alt="wind direction" style="transform: rotate(${data.wind.deg}deg)">
+                    <img src="weather-widget/img/_arrow.svg" alt="wind direction" style="transform: rotate(${data.wind.deg}deg)">
                     <span>${data.wind.speed}m/s</span>
                 </div>
                 <div class="weatherWidget-footer__wind">
