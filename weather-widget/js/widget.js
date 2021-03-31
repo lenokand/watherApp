@@ -1,9 +1,10 @@
 const API_KEY = '8c93761f0cfd02f56a37c775dc01adf7'
 const PLACE = 'Donetsk'
 
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=${PLACE}&appid=${API_KEY}`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${PLACE}&appid=${API_KEY}&units=metric`)
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         renderWidget(data)
     })
     .catch(err => {
@@ -17,7 +18,7 @@ function renderWidget(data) {
     let content = `
             <div class="weatherWidget-header">
                 <div class="weatherWidget-header__place">
-                    Donetsk
+                    ${data.name}
                 </div>
                 <button class="weatherWidget-header__reload">
                     <img src="./weather-widget/img/_refresh.svg" alt="reload weather">
@@ -27,7 +28,7 @@ function renderWidget(data) {
                 <img src="http://openweathermap.org/img/wn/10d@4x.png" alt="">
                 <div class="weatherWidget-body__info">
                     <div class="weatherWidget-body__info-temp">
-                        15&deg;C
+                        ${Math.round(data.main.temp)}&deg;C
                     </div>
                     <div class="weatherWidget-body__info-status">
                         <h2>Clear</h2>
