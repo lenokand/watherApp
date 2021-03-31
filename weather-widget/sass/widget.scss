@@ -1,0 +1,94 @@
+@use "sass:map";
+@use "_default" as default;
+.weatherWidget {
+  width: 300px;
+  background-color: default.$widget_bg;
+  border-radius: default.$widget_border_radius;
+  color: default.$widget_text;
+  font-family: default.$widget_font_face;
+  display: flex;
+  flex-direction: column;
+  box-shadow: default.$widget_shadow;
+  overflow: hidden;
+  h2,h3,h4 {
+    margin: 0;
+    font-weight: 500;
+  }
+  & &-header {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__place {
+      font-size: 2em;
+    }
+    &__reload {
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      box-shadow: none;
+      cursor: pointer;
+      width: 2.5em;
+      height: 2.5em;
+      padding: 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  & &-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    img {
+      filter: drop-shadow(0 2px 1px rgba(default.$widget_shadow_color, .5));
+    }
+    &__info {
+      align-self: stretch;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 1em;
+      &-temp {
+        font-size: 3.25em;
+        line-height: 1em;
+        font-weight: 500;
+        font-family: default.$widget_font_face_condensed;
+      }
+      &-status {
+        flex-grow: 1;
+        padding: 0 .75em;
+        line-height: 1.6em;
+      }
+      &-date {
+        padding: .5em 1em;
+        line-height: 1.1em;
+        background-color: default.$widget_date_bg;
+        color: default.$widget_date_text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: default.$widget_border_radius/2 0 0 default.$widget_border_radius/2;
+      }
+    }
+  }
+  & &-footer {
+    background-color: default.$widget_text;
+    color: default.$widget_bg;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 1em;
+    &>div {
+      display: flex;
+      align-items: center;
+      img {
+        max-height: 1.5em;
+      }
+      span {
+        margin-left: .5em;
+      }
+    }
+  }
+}

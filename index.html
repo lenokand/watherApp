@@ -4,8 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="weather-widget/css/widget.css">
+
 </head>
 <body>
-
+    <div class="center-block">
+        <div class="weatherWidget">
+            <div class="weatherWidget-header">
+                <div class="weatherWidget-header__place">
+                    Donetsk
+                </div>
+                <button class="weatherWidget-header__reload">
+                    <img src="./weather-widget/img/_refresh.svg" alt="reload weather">
+                </button>
+            </div>
+            <div class="weatherWidget-body">
+                <img src="http://openweathermap.org/img/wn/10d@4x.png" alt="">
+                <div class="weatherWidget-body__info">
+                    <div class="weatherWidget-body__info-temp">
+                        15&deg;C
+                    </div>
+                    <div class="weatherWidget-body__info-status">
+                        <h2>Clear</h2>
+                        <h4>clear sky</h4>
+                    </div>
+                    <div class="weatherWidget-body__info-date">
+                        Mar
+                        <div>31</div>
+                    </div>
+                </div>
+            </div>
+            <div class="weatherWidget-footer">
+                <div class="weatherWidget-footer__wind">
+                    <img src="./weather-widget/img/_arrow.svg" alt="wind direction">
+                    <span>5m/s</span>
+                </div>
+                <div class="weatherWidget-footer__wind">
+                    <img src="./weather-widget/img/_teardrop.svg" alt="humidity">
+                    <span>50%</span>
+                </div>
+                <div class="weatherWidget-footer__wind">
+                    Real feel: <span>13&deg;C</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="weather-widget/js/widget.js"></script>
 </body>
 </html>
