@@ -25,32 +25,32 @@ function renderWidget(data) {
                 </button>
             </div>
             <div class="weatherWidget-body">
-                <img src="http://openweathermap.org/img/wn/10d@4x.png" alt="">
+                <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" alt="">
                 <div class="weatherWidget-body__info">
                     <div class="weatherWidget-body__info-temp">
                         ${Math.round(data.main.temp)}&deg;C
                     </div>
                     <div class="weatherWidget-body__info-status">
-                        <h2>Clear</h2>
-                        <h4>clear sky</h4>
+                        <h2>${data.weather[0].main}</h2>
+                        <h4>${data.weather[0].description}</h4>
                     </div>
                     <div class="weatherWidget-body__info-date">
-                        Mar
-                        <div>31</div>
+                        ${monthArray[now.getMonth()]}
+                        <div>${now.getDate()}</div>
                     </div>
                 </div>
             </div>
             <div class="weatherWidget-footer">
                 <div class="weatherWidget-footer__wind">
-                    <img src="./weather-widget/img/_arrow.svg" alt="wind direction">
-                    <span>5m/s</span>
+                    <img src="./weather-widget/img/_arrow.svg" alt="wind direction" style="transform: rotate(${data.wind.deg}deg)">
+                    <span>${data.wind.speed}m/s</span>
                 </div>
                 <div class="weatherWidget-footer__wind">
                     <img src="./weather-widget/img/_teardrop.svg" alt="humidity">
-                    <span>50%</span>
+                    <span>${Math.round(data.main.humidity)}%</span>
                 </div>
                 <div class="weatherWidget-footer__wind">
-                    Real feel: <span>13&deg;C</span>
+                    Real feel: <span>${Math.round(data.main.feels_like)}&deg;C</span>
                 </div>
             </div>`
     widgetContainer.innerHTML = content
